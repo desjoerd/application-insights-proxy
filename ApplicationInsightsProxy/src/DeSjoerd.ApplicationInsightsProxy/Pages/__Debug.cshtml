@@ -1,0 +1,26 @@
+﻿@page
+@model DeSjoerd.ApplicationInsightsProxy.Pages.DebugModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+
+    var enableDisableExceptionModeText = Model.ExceptionModeSetting.Enabled ? "Disable Exception Mode" : "Enable Exception Mode";
+    var enableDisableExceptionModeValue = !Model.ExceptionModeSetting.Enabled;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>__DebugSettings</title>
+</head>
+<body>
+    <h1>Debug Settings</h1>
+
+    <form method="POST">
+        @*<input type="hidden" asp-for="ExceptionModeSetting.Enabled" value="@enableDisableExceptionModeValue" />*@
+        <button type="submit">@enableDisableExceptionModeText</button>
+    </form>
+</body>
+</html>
